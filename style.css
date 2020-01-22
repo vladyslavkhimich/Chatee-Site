@@ -1,0 +1,181 @@
+@keyframes header-text-shadow {
+  100% {
+    text-shadow: #b7186a 1px 1px, #bb2165 2px 2px, #be2b5f 3px 3px, #c2345a 4px 4px, #c63e54 5px 5px, #ca474e 6px 6px, #ce5149 7px 7px, #d15a43 8px 8px, #d5643e 9px 9px, #d96d38 10px 10px, #dd7732 11px 11px, #e1802d 12px 12px, #e48a27 13px 13px, #e89322 14px 14px, #ec9d1c 15px 15px, #f0a616 16px 16px, #f4b011 17px 17px, #f7b90b 18px 18px, #fbc306 19px 19px, #ffcc00 20px 20px, #b30e70 0px 0px; } }
+@keyframes scale-block {
+  100% {
+    transform: scale(1.05); } }
+body {
+  margin: 0; }
+
+header {
+  background: #ffdf08;
+  height: 125px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 15px grey;
+  z-index: 5;
+  position: fixed;
+  top: 0; }
+  header ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    padding-left: 5%;
+    width: 60%; }
+    header ul li {
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center; }
+    header ul li:first-child {
+      width: auto; }
+    header ul li:first-child ~ li {
+      width: 33.3%;
+      justify-content: center; }
+      header ul li:first-child ~ li:hover {
+        background-color: #ffcc00;
+        cursor: pointer; }
+        header ul li:first-child ~ li:hover a {
+          animation: header-text-shadow 0.5s forwards; }
+      header ul li:first-child ~ li a {
+        color: #fff;
+        font-family: "Lato", serif;
+        font-size: 1.6em;
+        text-decoration: none;
+        height: 100%;
+        display: flex;
+        align-items: center; }
+
+main {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 125px;
+  background: url("Images/dot-grid.png") repeat; }
+  main .interested-section {
+    text-align: center;
+    margin-top: 5%; }
+    main .interested-section .interested-chatee {
+      color: #000;
+      font-family: "Merriweather Light", serif;
+      font-size: 5vw; }
+    main .interested-section .check-out-font-size {
+      color: #000;
+      font-family: "Lato", serif;
+      font-size: 3.5vw; }
+    main .interested-section .github-button {
+      color: #000;
+      font-family: "Lato", serif;
+      font-size: 1.3vw;
+      padding: 30px;
+      background-color: #ffdf08;
+      border-radius: 30px;
+      border-width: 0;
+      margin: 1% 0 3%;
+      transition: 0.5s; }
+      main .interested-section .github-button:hover {
+        cursor: pointer;
+        color: #fff;
+        font-family: "Lato", serif;
+        background-color: #b30e70;
+        box-shadow: 0 0.5em 0.5em -0.4em #b30e70;
+        transform: translateY(-0.25em); }
+  main .why-section {
+    height: 2000px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    main .why-section .yellow-line {
+      width: 95%;
+      height: 90%;
+      position: absolute;
+      top: 10%;
+      left: 2.5%;
+      background: url("Images/Yellow Ribbon.png") no-repeat;
+      background-size: 100% 100%;
+      z-index: 0; }
+    main .why-section .why-chatee-reasons {
+      height: 25%;
+      margin: 5% 0;
+      width: 60%;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      main .why-section .why-chatee-reasons:hover {
+        animation: scale-block 0.5s both; }
+      main .why-section .why-chatee-reasons img {
+        height: 70%;
+        width: 35%; }
+      main .why-section .why-chatee-reasons .separator-black {
+        height: 86%;
+        width: 2px;
+        border: 1px solid black;
+        background-color: black;
+        border-radius: 7px;
+        margin: 0 -5%; }
+    main .why-section .why-chatee {
+      color: #000;
+      font-family: "Merriweather Light", serif;
+      font-size: 5.6vw;
+      margin-top: 5%; }
+    main .why-section .reason-text {
+      color: #000;
+      font-family: "Lato", serif;
+      font-size: 1.2vw;
+      text-align: left;
+      width: 35%;
+      height: 70%; }
+      main .why-section .reason-text .reason-heading {
+        color: #000;
+        font-family: "Merriweather Light", serif;
+        font-size: 2.3vw;
+        text-align: center;
+        margin-bottom: 5%; }
+  main .section-with-video {
+    height: auto;
+    position: relative; }
+    main .section-with-video .what-is-chatee {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0; }
+    main .section-with-video .question {
+      width: 50%;
+      color: #fff;
+      font-family: "Merriweather Light", serif;
+      font-size: 5.6vw;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      margin-left: 30px; }
+    main .section-with-video .separator {
+      width: 3px;
+      border: 1px solid #fff;
+      border-radius: 7px;
+      background: #fff;
+      height: 70%;
+      margin: 0 3.5%; }
+    main .section-with-video .explanation {
+      width: 50%;
+      color: #fff;
+      font-family: "Lato", serif;
+      text-align: left;
+      font-size: 2vw;
+      margin-right: 25px; }
+    main .section-with-video .video-block {
+      height: 100%; }
+      main .section-with-video .video-block .bg-video {
+        width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

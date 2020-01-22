@@ -1,0 +1,218 @@
+$yellow: #ffdf08
+$darker-yellow: #ffcc00
+$black: #000
+$white: #fff
+$dark-pink: #b30e70
+
+@mixin lato-white
+  color: $white
+  font-family: "Lato", serif
+
+@mixin lato-black
+  color: $black
+  font-family: "Lato", serif
+
+@mixin merriweather-white
+  color: $white
+  font-family: "Merriweather Light", serif
+
+@mixin merriweather-black
+  color: $black
+  font-family: "Merriweather Light", serif
+
+@mixin cross-browser-animation($animation-name, $animation-duration, $animation-fill-mode)
+  animation: $animation-name $animation-duration, $animation-fill-mode
+  -webkit-animation: $animation-name $animation-duration, $animation-fill-mode
+  -moz-animation: $animation-name $animation-duration, $animation-fill-mode
+  -o-animation: $animation-name $animation-duration, $animation-fill-mode
+@mixin cross-browser-flex
+  @include cross-browser-flex
+  display: -webkit-flex
+  display: -ms-flex
+  display: -webkit-box
+
+@function shadow-string($color1, $color2, $length)
+  $total-length: $length
+  $string: $color1 0px 0px
+  @while $length > 0
+    $mix-amount: 100 - (($length / $total-length) * 100)
+    $mixed-color: mix($color1,$color2, $mix-amount)
+    $string-addition: $length+px $length+px
+    $string: $mixed-color $string-addition, $string
+    $length: $length - 1
+
+  @return $string
+
+@mixin long-shadow($color1, $color2, $length)
+  text-shadow: shadow-string($color1, $color2, $length)
+
+@keyframes header-text-shadow
+    100%
+      text-shadow: shadow-string($dark-pink, $darker-yellow, 20)
+@keyframes scale-block
+  100%
+    transform: scale(1.05)
+body
+  margin: 0
+
+header
+  background: $yellow
+  height: 125px
+  width: 100%
+  @include cross-browser-flex
+  align-items: center
+  box-shadow: 0 2px 15px grey
+  z-index: 5
+  position: fixed
+  top: 0
+  ul
+    list-style-type: none
+    @include cross-browser-flex
+    flex-direction: row
+    align-items: center
+    margin: 0
+    height: 100%
+    padding-left: 5%
+    width: 60%
+    li
+      padding: 0 20px
+      height: 100%
+      @include cross-browser-flex
+      align-items: center
+    li:first-child
+      width: auto
+    li:first-child ~ li
+      width: 33.3%
+      justify-content: center
+      &:hover
+        background-color: $darker-yellow
+        cursor: pointer
+        a
+          animation: header-text-shadow .5s forwards
+      a
+        @include lato-white()
+        font-size: 1.6em
+        text-decoration: none
+        height: 100%
+        @include cross-browser-flex
+        align-items: center
+
+main
+  height: auto
+  @include cross-browser-flex
+  flex-direction: column
+  margin-top: 125px
+  background: url("Images/dot-grid.png") repeat
+  .interested-section
+    text-align: center
+    margin-top: 5%
+    .interested-chatee
+      @include merriweather-black
+      font-size: 5vw
+    .check-out-font-size
+      @include lato-black
+      font-size: 3.5vw
+    .github-button
+      @include lato-black
+      font-size: 1.3vw
+      padding: 30px
+      background-color: $yellow
+      border-radius: 30px
+      border-width: 0
+      margin: 1% 0 3%
+      transition: .5s
+      &:hover
+        cursor: pointer
+        @include lato-white
+        background-color: $dark-pink
+        box-shadow: 0 0.5em 0.5em -0.4em $dark-pink
+        transform: translateY(-0.25em)
+  .why-section
+    height: 2000px
+    position: relative
+    @include cross-browser-flex
+    flex-direction: column
+    align-items: center
+    .yellow-line
+      width: 95%
+      height: 90%
+      position: absolute
+      top: 10%
+      left: 2.5%
+      background: url("Images/Yellow Ribbon.png") no-repeat
+      background-size: 100% 100%
+      z-index: 0
+    .why-chatee-reasons
+      height: 25%
+      margin: 5% 0
+      width: 60%
+      background: $white
+      box-shadow:  0 0 20px rgba($black, 0.15)
+      z-index: 1
+      @include cross-browser-flex
+      align-items: center
+      justify-content: space-around
+      &:hover
+        animation: scale-block .5s both
+      img
+        height: 70%
+        width: 35%
+      .separator-black
+        height: 86%
+        width: 2px
+        border: 1px solid black
+        background-color: black
+        border-radius: 7px
+        margin: 0 -5%
+    .why-chatee
+      @include merriweather-black
+      font-size: 5.6vw
+      margin-top: 5%
+    .reason-text
+      @include lato-black
+      font-size: 1.2vw
+      text-align: left
+      width: 35%
+      height: 70%
+      .reason-heading
+        @include merriweather-black
+        font-size: 2.3vw
+        text-align: center
+        margin-bottom: 5%
+  .section-with-video
+    height: auto
+    position: relative
+    .what-is-chatee
+      height: 100%
+      width: 100%
+      @include cross-browser-flex
+      align-items: center
+      position: absolute
+      top: 0
+      left: 0
+    .question
+      width: 50%
+      @include merriweather-white()
+      font-size: 5.6vw
+      z-index: 1
+      @include cross-browser-flex
+      align-items: center
+      margin-left: 30px
+    .separator
+      width: 3px
+      border: 1px solid $white
+      border-radius: 7px
+      background: $white
+      height: 70%
+      margin: 0 3.5%
+    .explanation
+      width: 50%
+      @include lato-white()
+      text-align: left
+      font-size: 2vw
+      margin-right: 25px
+    .video-block
+      height: 100%
+      .bg-video
+        width: 100%
+
