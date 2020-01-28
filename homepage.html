@@ -2,70 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale:1">
     <title>Chatee - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.ico">
 </head>
 <body>
 <header>
     <ul>
-        <li><a href="homepage.html"><img src="Images/Chatee%20Header.png" alt="" height="60"></a></li>
-        <li><a href="">DEVELOPING</a></li>
+        <li><a href="homepage.html"><img src="Images/Chatee%20Header.png" alt=""></a></li>
+        <li><a href="developing.html">DEVELOPING</a></li>
         <li><a href="">ABOUT ME</a></li>
         <li><a href="">CONTACTS</a></li>
     </ul>
 </header>
 <main>
     <div class="section-with-video">
+        <img src="Images/whatischateeimage.png" id="videosubstitute" alt="">
         <div class="video-block">
-            <video class="bg-video" preload="none" autoplay loop muted poster="Images/whatischateeimage.png">
+            <video class="bg-video" id="video" preload="none" autoplay loop muted poster="Images/whatischateeimage.png">
                 <source src="Video/whatischateebackground.mp4" type="video/mp4"/>
             </video>
         </div>
         <div class="what-is-chatee">
-            <div class="question">What is Chatee?</div>
+            <div class="question huge-text">What is Chatee?</div>
             <div class="separator"></div>
-            <div class="explanation">Chatee is a brand new messenger with high functionality, which was made for you with passion and dedication. Open completely new world of communicating with other people with our help. How about having a chat with some tee?</div>
+            <div class="explanation">Chatee is a brand new messenger with high functionality, which was made for you with passion and dedication. Open completely new world of communicating with other people with our help.</div>
         </div>
+        <img src="https://images.pexels.com/photos/2330137/pexels-photo-2330137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Working space" id="mobilesubstitute">
     </div>
     <section class="why-section">
-        <div class="why-chatee">
+        <div class="why-chatee huge-text">
             Why Chatee?
         </div>
             <div class="yellow-line">
 
             </div>
         <div class="why-chatee-reasons">
-            <img src="Images/whychateefirstreason.jpg" alt="Design">
+            <img src="https://images.pexels.com/photos/285814/pexels-photo-285814.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Design">
             <div class="separator-black"></div>
             <div class="reason-text">
                 <div class="reason-heading">Design</div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur cumque deleniti dolores fugiat minima nobis nulla sunt unde veritatis? Adipisci aperiam blanditiis deleniti error facere ipsa nihil saepe veritatis.
+                    Meet new wave in messengers design! Our team of professionals gave all their's best to make application look modern and attractive. With it's stylish look it will be pleasure to send messages.
             </div>
         </div>
-        <div class="why-chatee-reasons">
+        <div class="why-chatee-reasons change-flex-order">
             <div class="reason-text">
                 <div class="reason-heading">Convenience</div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur cumque deleniti dolores fugiat minima nobis nulla sunt unde veritatis? Adipisci aperiam blanditiis deleniti error facere ipsa nihil saepe veritatis.
+                Chat anywhere using only your laptop and Internet connection. Modern world is such a comfortable place to communicate!
             </div>
             <div class="separator-black"></div>
-            <img src="Images/manwithnotebook.jpg" alt="Convenience">
+            <img src="https://images.pexels.com/photos/838413/pexels-photo-838413.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Convenience">
         </div>
         <div class="why-chatee-reasons">
-            <img src="Images/technologies.jpg" alt="Design">
+            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Design">
             <div class="separator-black"></div>
             <div class="reason-text">
                 <div class="reason-heading">Technologies</div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur cumque deleniti dolores fugiat minima nobis nulla sunt unde veritatis? Adipisci aperiam blanditiis deleniti error facere ipsa nihil saepe veritatis.
+                Our messenger was developed with the most up-to-date and actual technologies IT industry can give nowadays. So, you can be convinced that Chatee will not become outdated in one moment.
             </div>
         </div>
     </section>
-    <div class="slider">
-        <div class="slide" id="slide-1"></div>
-        <div class="slide" id="slide-2"></div>
-        <div class="slide" id="slide-3"></div>
+    <div class="gallery">
+        <div class="gallery-heading huge-text">Gallery</div>
+        <div class="slider-container">
+            <div class="slides">
+                    <img class="slide" id="slide-1" src="Images/SignInPage.png" alt="Sign In page">
+                    <img class="slide" id="slide-2" src="Images/ChatPage.png" alt="Chat page">
+                    <img class="slide" id="slide-3" src="Images/SettingsPage.png" alt="Settings Page">
+            </div>
+        </div>
+        <div class="links-container">
+            <a href="#slide-1"><span class="pulse"></span></a>
+            <a href="#slide-2"><span class="pulse"></span></a>
+            <a href="#slide-3"><span class="pulse"></span></a>
+        </div>
     </div>
     <section class="interested-section">
-        <div class="interested-chatee">Interested?</div>
+        <div class="interested-chatee huge-text">Interested?</div>
         <div class="check-out-font-size">Check out Chatee GitHub</div>
         <div>
             <form action="https://github.com/vladyslavkhimich/Chatee-Messenger">
@@ -74,5 +89,14 @@
         </div>
     </section>
 </main>
+<footer>
+    <div class="footer-outer-container">
+        <div class="my-logo-and-name">
+            <img src="Images/Logo%20Centered.jpg" alt="Khimich Logo">
+            <span>Vladyslav Khimich</span>
+        </div>
+        <div class="github-link"><a href="https://github.com/vladyslavkhimich"><i class="fa fa-github-square"></i></a></div>
+    </div>
+</footer>
 </body>
 </html>

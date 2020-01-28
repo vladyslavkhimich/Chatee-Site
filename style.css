@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 @keyframes header-text-shadow {
   100% {
     text-shadow: #b7186a 1px 1px, #bb2165 2px 2px, #be2b5f 3px 3px, #c2345a 4px 4px, #c63e54 5px 5px, #ca474e 6px 6px, #ce5149 7px 7px, #d15a43 8px 8px, #d5643e 9px 9px, #d96d38 10px 10px, #dd7732 11px 11px, #e1802d 12px 12px, #e48a27 13px 13px, #e89322 14px 14px, #ec9d1c 15px 15px, #f0a616 16px 16px, #f4b011 17px 17px, #f7b90b 18px 18px, #fbc306 19px 19px, #ffcc00 20px 20px, #b30e70 0px 0px; } }
@@ -7,11 +9,35 @@
 body {
   margin: 0; }
 
+html {
+  scroll-padding-top: 135px; }
+
+::selection {
+  background-color: #b30e70;
+  color: white; }
+
+::-moz-selection {
+  background-color: #b30e70;
+  color: white; }
+
+#video {
+  display: none; }
+
+#videosubstitute {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+#mobilesubstitute {
+  display: none; }
+
 header {
   background: #ffdf08;
   height: 125px;
   width: 100%;
   display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
   align-items: center;
   box-shadow: 0 2px 15px grey;
   z-index: 5;
@@ -20,6 +46,8 @@ header {
   header ul {
     list-style-type: none;
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
     flex-direction: row;
     align-items: center;
     margin: 0;
@@ -30,7 +58,12 @@ header {
       padding: 0 20px;
       height: 100%;
       display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
       align-items: center; }
+      header ul li img {
+        height: auto;
+        width: 100%; }
     header ul li:first-child {
       width: auto; }
     header ul li:first-child ~ li {
@@ -42,17 +75,139 @@ header {
         header ul li:first-child ~ li:hover a {
           animation: header-text-shadow 0.5s forwards; }
       header ul li:first-child ~ li a {
-        color: #fff;
-        font-family: "Lato", serif;
-        font-size: 1.6em;
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-size: 1.5vw;
         text-decoration: none;
         height: 100%;
         display: flex;
+        display: -webkit-flex;
+        display: -ms-flex;
         align-items: center; }
+
+.technologies-header-container {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 0;
+  width: 100%; }
+  .technologies-header-container .technologies-header {
+    font-size: 5.6vw;
+    color: black;
+    font-family: "Merriweather", serif; }
+  .technologies-header-container .black-line {
+    height: 3px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 27%;
+    margin: 0 5%; }
+
+.technologies-section {
+  height: 2850px;
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  flex-direction: column;
+  align-items: center; }
+  .technologies-section .pink-line {
+    width: 95%;
+    height: 87%;
+    position: absolute;
+    top: 7%;
+    left: 2.5%;
+    background: url("Images/Pink Ribbon.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 0; }
+  .technologies-section .used-technology {
+    height: 14.6%;
+    width: 60%;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    margin: 4% 0;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr; }
+    .technologies-section .used-technology:hover {
+      animation: scale-block 0.5s both; }
+    .technologies-section .used-technology .left-side {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      position: relative;
+      background: url("Images/Background pattern light.png"); }
+      .technologies-section .used-technology .left-side img {
+        height: auto;
+        width: 60%;
+        position: absolute;
+        top: 22.5%;
+        left: 20%; }
+      .technologies-section .used-technology .left-side .wcf-framework {
+        height: auto;
+        width: 90%;
+        position: absolute;
+        top: 32%;
+        left: 6%; }
+    .technologies-section .used-technology .right-side {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      background-color: #1f1f1f;
+      padding: 3% 5%; }
+      .technologies-section .used-technology .right-side .right-side-header {
+        color: white;
+        font-family: "Merriweather", serif;
+        font-size: 90px;
+        margin-bottom: 2%; }
+      .technologies-section .used-technology .right-side .right-side-text {
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-size: 24px; }
+      .technologies-section .used-technology .right-side .right-side-button {
+        text-align: right;
+        margin: 3% 3% 0 0; }
+        .technologies-section .used-technology .right-side .right-side-button input {
+          color: white;
+          font-family: "Lato", sans-serif;
+          border-width: 0;
+          padding: 10px 20px;
+          font-size: 24px;
+          background: #b30e70;
+          border-radius: 30px;
+          transition: 0.5s; }
+          .technologies-section .used-technology .right-side .right-side-button input:hover {
+            cursor: pointer;
+            color: white;
+            font-family: "Lato", sans-serif;
+            background-color: #ffdf08;
+            color: black;
+            box-shadow: 0 0.5em 0.5em -0.4em #ffdf08;
+            transform: translateY(-0.25em); }
+  .technologies-section div.used-technology:nth-child(even) .left-side {
+    background: url("Images/Background pattern dark.png"); }
+  .technologies-section div.used-technology:nth-child(even) .right-side {
+    background-color: white; }
+    .technologies-section div.used-technology:nth-child(even) .right-side .right-side-header {
+      color: black;
+      font-family: "Merriweather", serif; }
+    .technologies-section div.used-technology:nth-child(even) .right-side .right-side-text {
+      color: black;
+      font-family: "Lato", sans-serif; }
+
+main .architecture-section {
+  position: relative;
+  text-align: center; }
+  main .architecture-section .slider-container {
+    width: 75%; }
 
 main {
   height: auto;
   display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
   flex-direction: column;
   margin-top: 125px;
   background: url("Images/dot-grid.png") repeat; }
@@ -60,16 +215,16 @@ main {
     text-align: center;
     margin-top: 5%; }
     main .interested-section .interested-chatee {
-      color: #000;
-      font-family: "Merriweather Light", serif;
+      color: black;
+      font-family: "Merriweather", serif;
       font-size: 5vw; }
     main .interested-section .check-out-font-size {
-      color: #000;
-      font-family: "Lato", serif;
+      color: black;
+      font-family: "Lato", sans-serif;
       font-size: 3.5vw; }
     main .interested-section .github-button {
-      color: #000;
-      font-family: "Lato", serif;
+      color: black;
+      font-family: "Lato", sans-serif;
       font-size: 1.3vw;
       padding: 30px;
       background-color: #ffdf08;
@@ -79,8 +234,8 @@ main {
       transition: 0.5s; }
       main .interested-section .github-button:hover {
         cursor: pointer;
-        color: #fff;
-        font-family: "Lato", serif;
+        color: white;
+        font-family: "Lato", sans-serif;
         background-color: #b30e70;
         box-shadow: 0 0.5em 0.5em -0.4em #b30e70;
         transform: translateY(-0.25em); }
@@ -88,6 +243,8 @@ main {
     height: 2000px;
     position: relative;
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
     flex-direction: column;
     align-items: center; }
     main .why-section .yellow-line {
@@ -103,16 +260,18 @@ main {
       height: 25%;
       margin: 5% 0;
       width: 60%;
-      background: #fff;
+      background: white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
       z-index: 1;
       display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
       align-items: center;
-      justify-content: space-around; }
+      justify-content: center; }
       main .why-section .why-chatee-reasons:hover {
         animation: scale-block 0.5s both; }
       main .why-section .why-chatee-reasons img {
-        height: 70%;
+        height: auto;
         width: 35%; }
       main .why-section .why-chatee-reasons .separator-black {
         height: 86%;
@@ -120,22 +279,22 @@ main {
         border: 1px solid black;
         background-color: black;
         border-radius: 7px;
-        margin: 0 -5%; }
+        margin: 0 5%; }
     main .why-section .why-chatee {
-      color: #000;
-      font-family: "Merriweather Light", serif;
+      color: black;
+      font-family: "Merriweather", serif;
       font-size: 5.6vw;
       margin-top: 5%; }
     main .why-section .reason-text {
-      color: #000;
-      font-family: "Lato", serif;
+      color: black;
+      font-family: "Lato", sans-serif;
       font-size: 1.2vw;
       text-align: left;
       width: 35%;
       height: 70%; }
       main .why-section .reason-text .reason-heading {
-        color: #000;
-        font-family: "Merriweather Light", serif;
+        color: black;
+        font-family: "Merriweather", serif;
         font-size: 2.3vw;
         text-align: center;
         margin-bottom: 5%; }
@@ -146,30 +305,34 @@ main {
       height: 100%;
       width: 100%;
       display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
       align-items: center;
       position: absolute;
       top: 0;
       left: 0; }
     main .section-with-video .question {
       width: 50%;
-      color: #fff;
-      font-family: "Merriweather Light", serif;
+      color: white;
+      font-family: "Merriweather", serif;
       font-size: 5.6vw;
       z-index: 1;
       display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
       align-items: center;
       margin-left: 30px; }
     main .section-with-video .separator {
       width: 3px;
-      border: 1px solid #fff;
+      border: 1px solid white;
       border-radius: 7px;
-      background: #fff;
+      background: white;
       height: 70%;
       margin: 0 3.5%; }
     main .section-with-video .explanation {
       width: 50%;
-      color: #fff;
-      font-family: "Lato", serif;
+      color: white;
+      font-family: "Lato", sans-serif;
       text-align: left;
       font-size: 2vw;
       margin-right: 25px; }
@@ -177,5 +340,306 @@ main {
       height: 100%; }
       main .section-with-video .video-block .bg-video {
         width: 100%; }
+
+.slides {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  transition: 2s;
+  overflow: hidden; }
+  .slides .slide {
+    scroll-snap-align: start;
+    border-radius: 10px;
+    width: 100%;
+    position: relative; }
+
+.links-container {
+  position: relative;
+  top: -30px; }
+  .links-container a {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: #c56089;
+    display: inline-block;
+    margin: 0 0.5%;
+    transition: 0.3s; }
+    .links-container a:hover {
+      background-color: #b30e70; }
+      .links-container a:hover .pulse {
+        opacity: 1;
+        transform: scale(1.2); }
+    .links-container a .pulse {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background: none;
+      border: 1px solid #b30e70;
+      border-radius: 50%;
+      transition: all 0.3s cubic-bezier(0.53, -0.67, 0.79, 0.74); }
+
+.slider-container {
+  width: 61.35%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.gallery {
+  text-align: center; }
+  .gallery .gallery-heading {
+    color: black;
+    font-family: "Merriweather", serif;
+    font-size: 5vw;
+    margin: 5% 0 3%; }
+
+footer {
+  height: 75px;
+  background-color: #ffdf08; }
+  footer .footer-outer-container {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    height: 75px; }
+    footer .footer-outer-container .my-logo-and-name {
+      position: relative; }
+      footer .footer-outer-container .my-logo-and-name img {
+        height: 56px; }
+      footer .footer-outer-container .my-logo-and-name span {
+        color: black;
+        font-family: "Lato", sans-serif;
+        position: absolute;
+        font-size: 18px;
+        top: 50%;
+        margin-top: -11px;
+        margin-left: 10px;
+        width: 150px; }
+    footer .footer-outer-container .github-link i {
+      font-size: 48px;
+      color: black;
+      transition: 0.3s; }
+      footer .footer-outer-container .github-link i:hover {
+        color: #b30e70; }
+
+@media only screen and (max-width: 1440px) {
+  header ul li:first-child ~ li a {
+    font-size: 1.8vw; }
+
+  header ul {
+    width: 70%; }
+
+  main .why-section .why-chatee-reasons {
+    width: 80%; }
+    main .why-section .why-chatee-reasons .reason-text {
+      font-size: 1.7vw; }
+    main .why-section .why-chatee-reasons .reason-heading {
+      font-size: 3vw; }
+
+  .slider-container {
+    width: 80%; }
+
+  .technologies-section {
+    height: 2400px; }
+    .technologies-section .used-technology {
+      width: 75%; }
+      .technologies-section .used-technology .right-side .right-side-text {
+        font-size: 21px; }
+      .technologies-section .used-technology .right-side .right-side-header {
+        font-size: 80px; } }
+@media only screen and (max-width: 1152px) {
+  .technologies-section .used-technology {
+    height: 17%; } }
+@media only screen and (min-width: 992px) {
+  #video {
+    display: block; }
+
+  #videosubstitute {
+    display: none; }
+
+  main .interested-section .github-button {
+    font-size: 2vw; } }
+@media only screen and (max-width: 992px) {
+  header ul li:first-child ~ li a {
+    font-size: 2.3vw; }
+
+  header ul {
+    width: 100%; }
+
+  .slider-container {
+    width: 80%; }
+
+  main .why-section .why-chatee-reasons {
+    flex-direction: column;
+    height: 27%; }
+    main .why-section .why-chatee-reasons .separator-black {
+      width: 86%;
+      height: 2px;
+      margin: 5% 0; }
+    main .why-section .why-chatee-reasons .reason-text {
+      height: 35%;
+      width: 70%;
+      font-size: 2.5vw; }
+      main .why-section .why-chatee-reasons .reason-text .reason-heading {
+        font-size: 4vw;
+        margin-bottom: 2%; }
+    main .why-section .why-chatee-reasons img {
+      width: auto;
+      height: 35%; }
+
+  main .section-with-video .what-is-chatee {
+    flex-direction: column;
+    justify-content: center; }
+    main .section-with-video .what-is-chatee .separator {
+      height: 3px;
+      width: 75%;
+      margin: 3.5% 0; }
+    main .section-with-video .what-is-chatee .explanation {
+      height: 35%;
+      font-size: 2.5vw;
+      text-align: center; }
+    main .section-with-video .what-is-chatee .question {
+      height: 25%; }
+
+  .slider-container {
+    width: 92%; }
+
+  main .interested-section .github-button {
+    font-size: 2.75vw; }
+
+  .technologies-section .used-technology {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 19%;
+    width: 80%; }
+    .technologies-section .used-technology .left-side {
+      grid-row-start: 1;
+      grid-row-end: 1;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      width: 100%;
+      height: 100%; }
+      .technologies-section .used-technology .left-side img {
+        position: absolute;
+        top: 15%;
+        left: 40%;
+        width: auto;
+        height: 70%; }
+      .technologies-section .used-technology .left-side .wcf-framework {
+        width: auto;
+        height: 70%;
+        left: 23%;
+        top: 15%; }
+    .technologies-section .used-technology .right-side {
+      grid-row-start: 2;
+      grid-column-start: 1; }
+      .technologies-section .used-technology .right-side .right-side-header {
+        font-size: 72px; }
+      .technologies-section .used-technology .right-side .right-side-text {
+        font-size: 20px; } }
+@media only screen and (max-width: 600px) {
+  main .why-section {
+    height: 2000px; }
+    main .why-section .why-chatee-reasons {
+      height: 30%;
+      width: 95%; }
+      main .why-section .why-chatee-reasons .separator-black {
+        margin: 5% 0; }
+      main .why-section .why-chatee-reasons img {
+        height: 35%; }
+      main .why-section .why-chatee-reasons .reason-text {
+        font-size: 4.3vw; }
+        main .why-section .why-chatee-reasons .reason-text .reason-heading {
+          font-size: 7vw; }
+    main .why-section .change-flex-order .reason-text {
+      order: 2; }
+    main .why-section .change-flex-order .separator-black {
+      order: 1; }
+    main .why-section .change-flex-order img {
+      order: 0; }
+
+  .slider-container {
+    width: 97%; }
+
+  main .why-section .why-chatee, main .section-with-video .question, .gallery .gallery-heading, main .interested-section .interested-chatee {
+    font-size: 10vw; }
+
+  #mobilesubstitute {
+    display: block;
+    width: 100%;
+    height: auto; }
+
+  main .section-with-video .what-is-chatee .question {
+    position: relative;
+    top: -7%; }
+  main .section-with-video .what-is-chatee .separator {
+    display: none; }
+  main .section-with-video .what-is-chatee .explanation {
+    width: 90%;
+    position: relative;
+    top: 20%;
+    font-size: 5vw; }
+
+  header {
+    height: 140px; }
+
+  header ul {
+    flex-direction: column;
+    padding-left: 0; }
+    header ul li:first-child ~ li {
+      width: 100%;
+      height: 25%;
+      margin: 0;
+      padding: 0; }
+    header ul li:first-child ~ li a {
+      font-size: 4vw; }
+    header ul li:first-child ~ li:hover a {
+      animation: none; }
+    header ul li:first-of-type {
+      height: 25%; }
+      header ul li:first-of-type a {
+        height: 100%;
+        position: relative;
+        top: 2%; }
+        header ul li:first-of-type a img {
+          height: 100%;
+          width: auto; }
+
+  main .interested-section .check-out-font-size {
+    font-size: 5vw; }
+  main .interested-section .github-button {
+    font-size: 4vw; }
+
+  footer .footer-outer-container {
+    width: 90%; }
+
+  .technologies-section {
+    height: 3700px; }
+    .technologies-section .used-technology {
+      height: 22%;
+      width: 95%; }
+      .technologies-section .used-technology .left-side img {
+        margin: 0 auto;
+        display: block;
+        left: 25%;
+        height: 50%; }
+      .technologies-section .used-technology .left-side .wcf-framework {
+        height: 38%;
+        margin: 0 auto;
+        display: block;
+        left: 0;
+        top: 25%; }
+
+  main .architecture-section .slider-container {
+    width: 95%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,35 +1,43 @@
 $yellow: #ffdf08
 $darker-yellow: #ffcc00
-$black: #000
-$white: #fff
 $dark-pink: #b30e70
+$ribbon-pink: #bf0f79
+$lighter-pink: #c56089
+$light-black: #1f1f1f
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300&display=swap")
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap")
 
 @mixin lato-white
-  color: $white
-  font-family: "Lato", serif
+  color: white
+  font-family: "Lato", sans-serif
 
 @mixin lato-black
-  color: $black
-  font-family: "Lato", serif
+  color: black
+  font-family: "Lato", sans-serif
 
 @mixin merriweather-white
-  color: $white
-  font-family: "Merriweather Light", serif
+  color: white
+  font-family: "Merriweather", serif
 
 @mixin merriweather-black
-  color: $black
-  font-family: "Merriweather Light", serif
+  color: black
+  font-family: "Merriweather", serif
 
 @mixin cross-browser-animation($animation-name, $animation-duration, $animation-fill-mode)
   animation: $animation-name $animation-duration, $animation-fill-mode
   -webkit-animation: $animation-name $animation-duration, $animation-fill-mode
   -moz-animation: $animation-name $animation-duration, $animation-fill-mode
   -o-animation: $animation-name $animation-duration, $animation-fill-mode
+
 @mixin cross-browser-flex
-  @include cross-browser-flex
+  display: flex
   display: -webkit-flex
   display: -ms-flex
-  display: -webkit-box
+
+@mixin cross-browser-grid
+  display: grid
+  display: -ms-grid
 
 @function shadow-string($color1, $color2, $length)
   $total-length: $length
@@ -52,8 +60,28 @@ $dark-pink: #b30e70
 @keyframes scale-block
   100%
     transform: scale(1.05)
+
 body
   margin: 0
+html
+  scroll-padding-top: 135px
+
+::selection
+  background-color: $dark-pink
+  color: white
+::-moz-selection
+  background-color: $dark-pink
+  color: white
+#video
+  display: none
+
+#videosubstitute
+  display: block
+  width: 100%
+  height: 100%
+
+#mobilesubstitute
+  display: none
 
 header
   background: $yellow
@@ -79,6 +107,9 @@ header
       height: 100%
       @include cross-browser-flex
       align-items: center
+      img
+        height: auto
+        width: 100%
     li:first-child
       width: auto
     li:first-child ~ li
@@ -91,11 +122,116 @@ header
           animation: header-text-shadow .5s forwards
       a
         @include lato-white()
-        font-size: 1.6em
+        font-size: 1.5vw
         text-decoration: none
         height: 100%
         @include cross-browser-flex
         align-items: center
+.technologies-header-container
+  @include cross-browser-flex
+  align-items: center
+  justify-content: center
+  margin: 5% 0
+  width: 100%
+  .technologies-header
+    font-size: 5.6vw
+    @include merriweather-black
+  .black-line
+    height: 3px
+    background-color: black
+    border: 1px solid black
+    border-radius: 10px
+    width: 27%
+    margin: 0 5%
+.technologies-section
+  height: 2850px
+  position: relative
+  @include cross-browser-flex
+  flex-direction: column
+  align-items: center
+  .pink-line
+    width: 95%
+    height: 87%
+    position: absolute
+    top: 7%
+    left: 2.5%
+    background: url("Images/Pink Ribbon.png") no-repeat
+    background-size: 100% 100%
+    z-index: 0
+  .used-technology
+    height: 14.6%
+    width: 60%
+    background: white
+    box-shadow:  0 0 20px rgba(black, 0.15)
+    z-index: 1
+    margin: 4% 0
+    @include cross-browser-grid
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: 1fr
+    &:hover
+      animation: scale-block .5s both
+    .left-side
+      grid-column-start: 1
+      grid-row-start: 1
+      position: relative
+      background: url("Images/Background pattern light.png")
+      img
+        height: auto
+        width: 60%
+        position: absolute
+        top: 22.5%
+        left: 20%
+      .wcf-framework
+        height: auto
+        width: 90%
+        position: absolute
+        top: 32%
+        left: 6%
+    .right-side
+      grid-column-start: 2
+      grid-row-start: 1
+      background-color: $light-black
+      padding: 3% 5%
+      .right-side-header
+        @include merriweather-white
+        font-size: 90px
+        margin-bottom: 2%
+      .right-side-text
+        @include lato-white
+        font-size: 24px
+      .right-side-button
+        text-align: right
+        margin: 3% 3% 0 0
+        input
+          @include lato-white
+          border-width: 0
+          padding: 10px 20px
+          font-size: 24px
+          background: $dark-pink
+          border-radius: 30px
+          transition: .5s
+          &:hover
+            cursor: pointer
+            @include lato-white
+            background-color: $yellow
+            color: black
+            box-shadow: 0 0.5em 0.5em -0.4em $yellow
+            transform: translateY(-0.25em)
+  div.used-technology:nth-child(even)
+    .left-side
+      background: url("Images/Background pattern dark.png")
+    .right-side
+      background-color: white
+      .right-side-header
+        @include merriweather-black
+      .right-side-text
+        @include lato-black
+main .architecture-section
+  position: relative
+  text-align: center
+  .slider-container
+    width: 75%
+
 
 main
   height: auto
@@ -146,16 +282,16 @@ main
       height: 25%
       margin: 5% 0
       width: 60%
-      background: $white
-      box-shadow:  0 0 20px rgba($black, 0.15)
+      background: white
+      box-shadow:  0 0 20px rgba(black, 0.15)
       z-index: 1
       @include cross-browser-flex
       align-items: center
-      justify-content: space-around
+      justify-content: center
       &:hover
         animation: scale-block .5s both
       img
-        height: 70%
+        height: auto
         width: 35%
       .separator-black
         height: 86%
@@ -163,7 +299,7 @@ main
         border: 1px solid black
         background-color: black
         border-radius: 7px
-        margin: 0 -5%
+        margin: 0 5%
     .why-chatee
       @include merriweather-black
       font-size: 5.6vw
@@ -200,9 +336,9 @@ main
       margin-left: 30px
     .separator
       width: 3px
-      border: 1px solid $white
+      border: 1px solid white
       border-radius: 7px
-      background: $white
+      background: white
       height: 70%
       margin: 0 3.5%
     .explanation
@@ -215,4 +351,282 @@ main
       height: 100%
       .bg-video
         width: 100%
+.slides
+  @include cross-browser-flex
+  scroll-snap-type: x mandatory
+  scroll-behavior: smooth
+  -webkit-overflow-scrolling: touch
+  transition: 2s
+  overflow: hidden
+  .slide
+    scroll-snap-align: start
+    border-radius: 10px
+    width: 100%
+    position: relative
 
+
+.links-container
+  position: relative
+  top: -30px
+  a
+    position: relative
+    height: 20px
+    width: 20px
+    border-radius: 10px
+    background-color: $lighter-pink
+    display: inline-block
+    margin: 0 0.5%
+    transition: .3s
+    &:hover
+      background-color: $dark-pink
+      .pulse
+        opacity: 1
+        transform: scale(1.2)
+    .pulse
+      position: absolute
+      top: -1px
+      left: -1px
+      width: 100%
+      height: 100%
+      opacity: 0
+      background: none
+      border: 1px solid $dark-pink
+      border-radius: 50%
+      transition: all .3s cubic-bezier(0.53, -0.67, 0.79, 0.74)
+
+.slider-container
+  width: 61.35%
+  height: auto
+  margin: 0 auto
+  overflow: hidden
+.gallery
+  text-align: center
+  .gallery-heading
+    @include merriweather-black
+    font-size: 5vw
+    margin: 5% 0 3%
+
+footer
+  height: 75px
+  background-color: $yellow
+  .footer-outer-container
+    @include cross-browser-flex
+    justify-content: space-between
+    align-items: center
+    width: 70%
+    margin: 0 auto
+    height: 75px
+    .my-logo-and-name
+      position: relative
+      img
+        height: 56px
+      span
+        @include lato-black
+        position: absolute
+        font-size: 18px
+        top: 50%
+        margin-top: -11px
+        margin-left: 10px
+        width: 150px
+    .github-link
+      i
+        font-size: 48px
+        color: black
+        transition: .3s
+        &:hover
+          color: $dark-pink
+
+@media only screen and (max-width: 1440px)
+  header ul li:first-child ~ li a
+    font-size: 1.8vw
+  header ul
+    width: 70%
+  main .why-section .why-chatee-reasons
+    width: 80%
+    .reason-text
+      font-size: 1.7vw
+    .reason-heading
+      font-size: 3vw
+  .slider-container
+    width: 80%
+  .technologies-section
+    height: 2400px
+    .used-technology
+      width: 75%
+      .right-side
+        .right-side-text
+          font-size: 21px
+        .right-side-header
+          font-size: 80px
+@media only screen and (max-width: 1152px)
+  .technologies-section .used-technology
+    height: 17%
+
+@media only screen and (min-width: 992px)
+  #video
+    display: block
+  #videosubstitute
+    display: none
+  main .interested-section .github-button
+    font-size: 2vw
+@media only screen and (max-width: 992px)
+  header ul li:first-child ~ li a
+    font-size: 2.3vw
+  header ul
+    width: 100%
+  .slider-container
+    width: 80%
+  main .why-section .why-chatee-reasons
+    flex-direction: column
+    height: 27%
+    .separator-black
+      width: 86%
+      height: 2px
+      margin: 5% 0
+    .reason-text
+      height: 35%
+      width: 70%
+      font-size: 2.5vw
+      .reason-heading
+        font-size: 4vw
+        margin-bottom: 2%
+    img
+      width: auto
+      height: 35%
+  main .section-with-video .what-is-chatee
+    flex-direction: column
+    justify-content: center
+    .separator
+      height: 3px
+      width: 75%
+      margin: 3.5% 0
+    .explanation
+      height: 35%
+      font-size: 2.5vw
+      text-align: center
+    .question
+      height: 25%
+  .slider-container
+    width: 92%
+  main .interested-section .github-button
+    font-size: 2.75vw
+  .technologies-section .used-technology
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr 1fr
+    height: 19%
+    width: 80%
+    .left-side
+      grid-row-start: 1
+      grid-row-end: 1
+      grid-column-start: 1
+      grid-column-end: 1
+      width: 100%
+      height: 100%
+      img
+        position: absolute
+        top: 15%
+        left: 40%
+        width: auto
+        height: 70%
+      .wcf-framework
+        width: auto
+        height: 70%
+        left: 23%
+        top: 15%
+    .right-side
+      grid-row-start: 2
+      grid-column-start: 1
+      .right-side-header
+        font-size: 72px
+      .right-side-text
+        font-size: 20px
+@media only screen and (max-width: 600px)
+  main .why-section
+    height: 2000px
+    .why-chatee-reasons
+      height: 30%
+      width: 95%
+      .separator-black
+        margin: 5% 0
+      img
+        height: 35%
+      .reason-text
+        font-size: 4.3vw
+        .reason-heading
+          font-size: 7vw
+    .change-flex-order
+      .reason-text
+        order: 2
+      .separator-black
+        order: 1
+      img
+        order: 0
+  .slider-container
+    width: 97%
+  main .why-section .why-chatee, main .section-with-video .question, .gallery .gallery-heading, main .interested-section .interested-chatee
+    font-size: 10vw
+  #mobilesubstitute
+    display: block
+    width: 100%
+    height: auto
+  main .section-with-video .what-is-chatee
+    .question
+      position: relative
+      top: -7%
+    .separator
+      display: none
+    .explanation
+      width: 90%
+      position: relative
+      top: 20%
+      font-size: 5vw
+  header
+    height: 140px
+  header ul
+    flex-direction: column
+    padding-left: 0
+    li:first-child ~ li
+      width: 100%
+      height: 25%
+      margin: 0
+      padding: 0
+    li:first-child ~ li a
+      font-size: 4vw
+    li:first-child ~ li:hover a
+      animation: none
+    li:first-of-type
+      height: 25%
+      a
+        height: 100%
+        position: relative
+        top: 2%
+        img
+          height: 100%
+          width: auto
+  main .interested-section
+    .check-out-font-size
+      font-size: 5vw
+    .github-button
+      font-size: 4vw
+  footer .footer-outer-container
+    width: 90%
+  .technologies-section
+    height: 3700px
+    .used-technology
+      height: 22%
+      width: 95%
+      .left-side
+        img
+          margin: 0 auto
+          display: block
+          left: 25%
+          height: 50%
+        .wcf-framework
+          height: 38%
+          margin: 0 auto
+          display: block
+          left: 0
+          top: 25%
+  main .architecture-section
+    .slider-container
+      width: 95%
