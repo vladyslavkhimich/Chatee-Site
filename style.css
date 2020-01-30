@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap");
 @keyframes header-text-shadow {
   100% {
     text-shadow: #b7186a 1px 1px, #bb2165 2px 2px, #be2b5f 3px 3px, #c2345a 4px 4px, #c63e54 5px 5px, #ca474e 6px 6px, #ce5149 7px 7px, #d15a43 8px 8px, #d5643e 9px 9px, #d96d38 10px 10px, #dd7732 11px 11px, #e1802d 12px 12px, #e48a27 13px 13px, #e89322 14px 14px, #ec9d1c 15px 15px, #f0a616 16px 16px, #f4b011 17px 17px, #f7b90b 18px 18px, #fbc306 19px 19px, #ffcc00 20px 20px, #b30e70 0px 0px; } }
@@ -30,6 +31,9 @@ html {
 
 #mobilesubstitute {
   display: none; }
+
+.active {
+  background-color: #ffcc00; }
 
 header {
   background: #ffdf08;
@@ -85,6 +89,12 @@ header {
         display: -ms-flex;
         align-items: center; }
 
+.technologies-header {
+  font-size: 108px;
+  color: black;
+  font-family: "Merriweather", serif;
+  white-space: nowrap; }
+
 .technologies-header-container {
   display: flex;
   display: -webkit-flex;
@@ -93,10 +103,6 @@ header {
   justify-content: center;
   margin: 5% 0;
   width: 100%; }
-  .technologies-header-container .technologies-header {
-    font-size: 5.6vw;
-    color: black;
-    font-family: "Merriweather", serif; }
   .technologies-header-container .black-line {
     height: 3px;
     background-color: black;
@@ -146,12 +152,6 @@ header {
         position: absolute;
         top: 22.5%;
         left: 20%; }
-      .technologies-section .used-technology .left-side .wcf-framework {
-        height: auto;
-        width: 90%;
-        position: absolute;
-        top: 32%;
-        left: 6%; }
     .technologies-section .used-technology .right-side {
       grid-column-start: 2;
       grid-row-start: 1;
@@ -203,6 +203,71 @@ main .architecture-section {
   main .architecture-section .slider-container {
     width: 75%; }
 
+.contacts-main {
+  height: 737px;
+  margin-top: 125px;
+  background: url("Images/contacts-background.jpg") no-repeat;
+  position: relative; }
+  .contacts-main .contacts-block {
+    height: 80%;
+    width: 60%;
+    margin: 0 auto;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 3fr 1fr; }
+    .contacts-main .contacts-block .left-side {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 30px 45px; }
+      .contacts-main .contacts-block .left-side .contacts-header {
+        color: black;
+        font-family: "Merriweather", serif;
+        font-size: 32px; }
+      .contacts-main .contacts-block .left-side input[type="text"], .contacts-main .contacts-block .left-side input[type="email"], .contacts-main .contacts-block .left-side textarea {
+        background: transparent;
+        border-width: 0;
+        border-bottom: 3px solid #1f1f1f;
+        width: 100%;
+        padding: 10px 0;
+        display: block;
+        font-family: Lato, serif;
+        margin-top: 12px;
+        resize: none; }
+        .contacts-main .contacts-block .left-side input[type="text"]:focus, .contacts-main .contacts-block .left-side input[type="email"]:focus, .contacts-main .contacts-block .left-side textarea:focus {
+          border-bottom: 3px solid #ffdf08;
+          outline: none; }
+      .contacts-main .contacts-block .left-side input[type="submit"] {
+        background: transparent;
+        border-width: 0;
+        border-bottom: 3px solid #ffdf08;
+        width: 100%;
+        padding: 10px 0;
+        color: black;
+        font-family: "Lato", sans-serif;
+        margin-top: 15px; }
+        .contacts-main .contacts-block .left-side input[type="submit"]:hover {
+          background: #ffdf08;
+          cursor: pointer; }
+    .contacts-main .contacts-block .contacts-block-right {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px 45px; }
+    .contacts-main .contacts-block .contacts-info-header {
+      color: black;
+      font-family: "Merriweather", serif;
+      font-size: 22px;
+      text-align: center; }
+    .contacts-main .contacts-block .my-email-text {
+      color: black;
+      font-family: "Lato", sans-serif;
+      font-size: 18px;
+      text-align: left;
+      margin: 15px 0; }
+    .contacts-main .contacts-block .my-email {
+      font-size: 14px;
+      margin: 0; }
+
 main {
   height: auto;
   display: flex;
@@ -217,15 +282,15 @@ main {
     main .interested-section .interested-chatee {
       color: black;
       font-family: "Merriweather", serif;
-      font-size: 5vw; }
+      font-size: 108px; }
     main .interested-section .check-out-font-size {
       color: black;
       font-family: "Lato", sans-serif;
-      font-size: 3.5vw; }
+      font-size: 72px; }
     main .interested-section .github-button {
       color: black;
       font-family: "Lato", sans-serif;
-      font-size: 1.3vw;
+      font-size: 32px;
       padding: 30px;
       background-color: #ffdf08;
       border-radius: 30px;
@@ -283,7 +348,7 @@ main {
     main .why-section .why-chatee {
       color: black;
       font-family: "Merriweather", serif;
-      font-size: 5.6vw;
+      font-size: 108px;
       margin-top: 5%; }
     main .why-section .reason-text {
       color: black;
@@ -315,7 +380,7 @@ main {
       width: 50%;
       color: white;
       font-family: "Merriweather", serif;
-      font-size: 5.6vw;
+      font-size: 92px;
       z-index: 1;
       display: flex;
       display: -webkit-flex;
@@ -396,8 +461,153 @@ main {
   .gallery .gallery-heading {
     color: black;
     font-family: "Merriweather", serif;
-    font-size: 5vw;
+    font-size: 108px;
     margin: 5% 0 3%; }
+
+.about-me-section {
+  height: 560px;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  align-items: center;
+  justify-content: center; }
+  .about-me-section .about-me-block {
+    width: 60%;
+    height: 80%;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 1; }
+    .about-me-section .about-me-block:hover {
+      animation: scale-block 0.5s both; }
+    .about-me-section .about-me-block .image-container {
+      height: 100%;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      align-items: center;
+      position: relative;
+      background: url("Images/Background pattern light.png"); }
+      .about-me-section .about-me-block .image-container img {
+        position: absolute;
+        width: 100%;
+        height: auto; }
+    .about-me-section .about-me-block .about-me-text-container {
+      padding: 3% 5%; }
+      .about-me-section .about-me-block .about-me-text-container .about-me-header {
+        color: black;
+        font-family: "Merriweather", serif;
+        font-size: 64px;
+        margin-bottom: 2%; }
+      .about-me-section .about-me-block .about-me-text-container .about-me-description {
+        font-size: 18px;
+        color: black;
+        font-family: "Lato", sans-serif; }
+
+.my-skills-section {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  flex-direction: column;
+  align-items: center; }
+
+.my-skills {
+  height: 750px;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr 1fr;
+  width: 79.2%; }
+  .my-skills .skills-block {
+    margin: 1% auto;
+    background: white;
+    width: 60%;
+    height: 85%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
+    .my-skills .skills-block:hover {
+      animation: scale-block 0.5s both; }
+    .my-skills .skills-block .skills-block-header {
+      text-align: center;
+      color: black;
+      font-family: "Merriweather", serif;
+      font-size: 48px;
+      margin-top: 5%; }
+    .my-skills .skills-block .list-container {
+      padding: 1% 9%; }
+      .my-skills .skills-block .list-container p {
+        color: #b30e70;
+        font-family: Lato, serif;
+        font-size: 22px; }
+      .my-skills .skills-block .list-container li {
+        color: black;
+        font-family: "Lato", sans-serif;
+        font-size: 22px; }
+
+.education-section {
+  height: 702px;
+  background: url("Images/studying-background.jpg") no-repeat center;
+  background-size: cover;
+  margin-bottom: 3%; }
+  .education-section .education-container {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0 0 0;
+    width: 100%;
+    height: 90%; }
+    .education-section .education-container .education-header {
+      color: white;
+      font-family: "Merriweather", serif;
+      font-size: 80px; }
+    .education-section .education-container .education-description-block {
+      background: rgba(0, 0, 0, 0.502);
+      width: 54%;
+      height: 60%;
+      margin-top: 2%; }
+    .education-section .education-container .education-paragraph {
+      font-size: 28px;
+      margin: 5% 0 0 5%;
+      color: white;
+      font-family: "Lato", sans-serif; }
+      .education-section .education-container .education-paragraph span {
+        color: #ffdf08;
+        font-weight: 700; }
+
+.bonus-section .technologies-header {
+  text-align: center; }
+.bonus-section .my-favourite-songs-container {
+  height: 753px;
+  width: 100%;
+  background: url("Images/songs-background.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  align-items: center;
+  justify-content: center; }
+  .bonus-section .my-favourite-songs-container .my-favourite-songs-block {
+    width: 79.2%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.6); }
+    .bonus-section .my-favourite-songs-container .my-favourite-songs-block .favourite-songs-header {
+      color: black;
+      font-family: "Merriweather", serif;
+      font-size: 72px;
+      text-align: center;
+      margin: 3% auto; }
+    .bonus-section .my-favourite-songs-container .my-favourite-songs-block .songs-container .song-container {
+      text-align: center; }
+      .bonus-section .my-favourite-songs-container .my-favourite-songs-block .songs-container .song-container .song-name {
+        font-family: Lato, serif;
+        margin: 10px 0;
+        font-size: 32px;
+        color: #b30e70; }
 
 footer {
   height: 75px;
@@ -441,9 +651,9 @@ footer {
   main .why-section .why-chatee-reasons {
     width: 80%; }
     main .why-section .why-chatee-reasons .reason-text {
-      font-size: 1.7vw; }
+      font-size: 24px; }
     main .why-section .why-chatee-reasons .reason-heading {
-      font-size: 3vw; }
+      font-size: 48px; }
 
   .slider-container {
     width: 80%; }
@@ -455,7 +665,10 @@ footer {
       .technologies-section .used-technology .right-side .right-side-text {
         font-size: 21px; }
       .technologies-section .used-technology .right-side .right-side-header {
-        font-size: 80px; } }
+        font-size: 80px; }
+
+  .about-me-section .about-me-block, .education-section .education-container .education-description-block, .my-skills .skills-block {
+    width: 80%; } }
 @media only screen and (max-width: 1152px) {
   .technologies-section .used-technology {
     height: 17%; } }
@@ -464,10 +677,7 @@ footer {
     display: block; }
 
   #videosubstitute {
-    display: none; }
-
-  main .interested-section .github-button {
-    font-size: 2vw; } }
+    display: none; } }
 @media only screen and (max-width: 992px) {
   header ul li:first-child ~ li a {
     font-size: 2.3vw; }
@@ -477,6 +687,12 @@ footer {
 
   .slider-container {
     width: 80%; }
+
+  main .why-section .why-chatee, .gallery .gallery-heading, main .interested-section .interested-chatee, .technologies-header {
+    font-size: 78px; }
+
+  main .interested-section .check-out-font-size {
+    font-size: 56px; }
 
   main .why-section .why-chatee-reasons {
     flex-direction: column;
@@ -488,9 +704,9 @@ footer {
     main .why-section .why-chatee-reasons .reason-text {
       height: 35%;
       width: 70%;
-      font-size: 2.5vw; }
+      font-size: 22px; }
       main .why-section .why-chatee-reasons .reason-text .reason-heading {
-        font-size: 4vw;
+        font-size: 36px;
         margin-bottom: 2%; }
     main .why-section .why-chatee-reasons img {
       width: auto;
@@ -505,16 +721,20 @@ footer {
       margin: 3.5% 0; }
     main .section-with-video .what-is-chatee .explanation {
       height: 35%;
-      font-size: 2.5vw;
-      text-align: center; }
+      font-size: 22px;
+      text-align: center;
+      width: 55%; }
     main .section-with-video .what-is-chatee .question {
-      height: 25%; }
+      width: 80%;
+      height: 25%;
+      font-size: 60px;
+      justify-content: center; }
 
   .slider-container {
     width: 92%; }
 
   main .interested-section .github-button {
-    font-size: 2.75vw; }
+    font-size: 32px; }
 
   .technologies-section .used-technology {
     grid-template-columns: 1fr;
@@ -534,18 +754,26 @@ footer {
         left: 40%;
         width: auto;
         height: 70%; }
-      .technologies-section .used-technology .left-side .wcf-framework {
-        width: auto;
-        height: 70%;
-        left: 23%;
-        top: 15%; }
     .technologies-section .used-technology .right-side {
       grid-row-start: 2;
       grid-column-start: 1; }
       .technologies-section .used-technology .right-side .right-side-header {
         font-size: 72px; }
       .technologies-section .used-technology .right-side .right-side-text {
-        font-size: 20px; } }
+        font-size: 20px; }
+
+  .my-skills {
+    width: 90%; }
+
+  .about-me-section {
+    height: 850px; }
+
+  .my-skills .skills-block .skills-block-header {
+    font-size: 40px; }
+
+  .contacts-main .contacts-block {
+    width: 90%;
+    left: 5%; } }
 @media only screen and (max-width: 600px) {
   main .why-section {
     height: 2000px; }
@@ -557,9 +785,9 @@ footer {
       main .why-section .why-chatee-reasons img {
         height: 35%; }
       main .why-section .why-chatee-reasons .reason-text {
-        font-size: 4.3vw; }
+        font-size: 20px; }
         main .why-section .why-chatee-reasons .reason-text .reason-heading {
-          font-size: 7vw; }
+          font-size: 32px; }
     main .why-section .change-flex-order .reason-text {
       order: 2; }
     main .why-section .change-flex-order .separator-black {
@@ -570,8 +798,8 @@ footer {
   .slider-container {
     width: 97%; }
 
-  main .why-section .why-chatee, main .section-with-video .question, .gallery .gallery-heading, main .interested-section .interested-chatee {
-    font-size: 10vw; }
+  main .why-section .why-chatee, main .section-with-video .question, .gallery .gallery-heading, main .interested-section .interested-chatee, .technologies-header {
+    font-size: 44px; }
 
   #mobilesubstitute {
     display: block;
@@ -580,14 +808,18 @@ footer {
 
   main .section-with-video .what-is-chatee .question {
     position: relative;
-    top: -7%; }
+    top: -7%;
+    font-size: 44px;
+    margin-left: 0;
+    justify-content: center;
+    width: 100%; }
   main .section-with-video .what-is-chatee .separator {
     display: none; }
   main .section-with-video .what-is-chatee .explanation {
     width: 90%;
     position: relative;
-    top: 20%;
-    font-size: 5vw; }
+    top: 10%;
+    font-size: 20px; }
 
   header {
     height: 140px; }
@@ -615,9 +847,9 @@ footer {
           width: auto; }
 
   main .interested-section .check-out-font-size {
-    font-size: 5vw; }
+    font-size: 32px; }
   main .interested-section .github-button {
-    font-size: 4vw; }
+    font-size: 20px; }
 
   footer .footer-outer-container {
     width: 90%; }
@@ -625,21 +857,53 @@ footer {
   .technologies-section {
     height: 3700px; }
     .technologies-section .used-technology {
-      height: 22%;
+      height: 23.5%;
       width: 95%; }
       .technologies-section .used-technology .left-side img {
         margin: 0 auto;
         display: block;
         left: 25%;
         height: 50%; }
-      .technologies-section .used-technology .left-side .wcf-framework {
-        height: 38%;
-        margin: 0 auto;
-        display: block;
-        left: 0;
-        top: 25%; }
 
   main .architecture-section .slider-container {
-    width: 95%; } }
+    width: 95%; }
+
+  .my-skills {
+    height: 1400px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr; }
+    .my-skills .skills-block {
+      width: 95%; }
+
+  .bonus-section .my-favourite-songs-container .my-favourite-songs-block {
+    width: 95%; }
+    .bonus-section .my-favourite-songs-container .my-favourite-songs-block audio {
+      width: 100%; }
+    .bonus-section .my-favourite-songs-container .my-favourite-songs-block .favourite-songs-header {
+      font-size: 48px; }
+
+  .about-me-section {
+    height: 1300px; }
+    .about-me-section .about-me-block {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+      width: 95%; }
+      .about-me-section .about-me-block .image-container {
+        background: none; }
+
+  .education-section .education-container .education-header {
+    font-size: 64px; }
+  .education-section .education-container .education-description-block {
+    height: 80%;
+    width: 95%; }
+
+  .bonus-header {
+    white-space: normal; }
+
+  .contacts-main {
+    height: 780px; }
+    .contacts-main .contacts-block {
+      grid-template-columns: 1fr;
+      grid-template-rows: 3fr 1fr; } }
 
 /*# sourceMappingURL=style.css.map */
