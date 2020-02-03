@@ -1,3 +1,30 @@
+// ====================
+// Table of contents
+//
+// 1. Colours
+// 2. Google fonts
+// 3. Mixins
+// 4. Functions
+// 5. Animations
+// 6. Block common styles
+// 7. Selection styles
+// 8. Home page video styles
+// 9. Header styles
+// 10. Developing page technologies blocks styles
+// 11. Developing page slider styles
+// 12. Contacts page styles
+// 13. Slider styles
+// 14. About me page styles
+// 15. Footer styles
+// 16. Adaptability styles
+//
+// =====================
+
+
+// =====================
+// 1.Colours
+// =====================
+
 $yellow: #ffdf08
 $darker-yellow: #ffcc00
 $dark-pink: #b30e70
@@ -5,9 +32,17 @@ $ribbon-pink: #bf0f79
 $lighter-pink: #c56089
 $light-black: #1f1f1f
 
+// =====================
+// 2. Google fonts
+// =====================
+
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300&display=swap")
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap")
 @import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap")
+
+// =====================
+// 3. Mixins
+// =====================
 
 @mixin lato-white
   color: white
@@ -40,6 +75,11 @@ $light-black: #1f1f1f
   display: grid
   display: -ms-grid
 
+// =====================
+// 4. Functions
+// =====================
+
+// Makes a gradient shadow to text
 @function shadow-string($color1, $color2, $length)
   $total-length: $length
   $string: $color1 0px 0px
@@ -55,6 +95,10 @@ $light-black: #1f1f1f
 @mixin long-shadow($color1, $color2, $length)
   text-shadow: shadow-string($color1, $color2, $length)
 
+// =====================
+// 5. Animations
+// =====================
+
 @keyframes header-text-shadow
     100%
       text-shadow: shadow-string($dark-pink, $darker-yellow, 20)
@@ -62,10 +106,18 @@ $light-black: #1f1f1f
   100%
     transform: scale(1.05)
 
+// =====================
+// 6. Block common styles
+// =====================
+
 body
   margin: 0
 html
   scroll-padding-top: 135px
+
+// =====================
+// 7. Selection styles
+// =====================
 
 ::selection
   background-color: $dark-pink
@@ -73,6 +125,11 @@ html
 ::-moz-selection
   background-color: $dark-pink
   color: white
+
+// =====================
+// 8. Home page video styles
+// =====================
+
 #video
   display: none
 
@@ -85,6 +142,11 @@ html
   display: none
 .active
   background-color: $darker-yellow
+
+// =====================
+// 9. Header styles
+// =====================
+
 header
   background: $yellow
   height: 125px
@@ -129,6 +191,11 @@ header
         height: 100%
         @include cross-browser-flex
         align-items: center
+
+// =====================
+// 10. Developing page technologies blocks styles
+// =====================
+
 .technologies-header
   font-size: 108px
   @include merriweather-black
@@ -223,11 +290,21 @@ header
         @include merriweather-black
       .right-side-text
         @include lato-black
+
+// =====================
+// 11. Developing page slider styles
+// =====================
+
 main .architecture-section
   position: relative
   text-align: center
   .slider-container
     width: 75%
+
+// =====================
+// 12. Contacts page styles
+// =====================
+
 .contacts-main
   height:  737px
   margin-top: 125px
@@ -287,6 +364,10 @@ main .architecture-section
     .my-email
       font-size: 14px
       margin: 0
+
+// =====================
+// 12. Home page styles
+// =====================
 
 main
   height: auto
@@ -406,6 +487,11 @@ main
       height: 100%
       .bg-video
         width: 100%
+
+// =====================
+// 13. Slider styles
+// =====================
+
 .slides
   @include cross-browser-flex
   scroll-snap-type: x mandatory
@@ -454,6 +540,11 @@ main
   height: auto
   margin: 0 auto
   overflow: hidden
+
+// =====================
+// 14. About me page styles
+// =====================
+
 .gallery
   text-align: center
   .gallery-heading
@@ -582,6 +673,11 @@ main
           margin: 10px 0
           font-size: 32px
           color: $dark-pink
+
+// =====================
+// 15. Footer styles
+// =====================
+
 footer
   height: 75px
   background-color: $yellow
@@ -611,6 +707,10 @@ footer
         transition: .3s
         &:hover
           color: $dark-pink
+
+// =====================
+// 16. Adaptability styles
+// =====================
 
 @media only screen and (max-width: 1440px)
   header ul li:first-child ~ li a
