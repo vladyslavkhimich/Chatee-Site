@@ -11,6 +11,8 @@ This is a site that was made to present my messenger to the world. It was made w
 * Advanced HTML5
 * Advanced CSS3
 * SASS preprocessor
+* Making animations and hover effects
+* Making sliders without JavaScript
 * Creating PSD layouts
 ## Built with
 * HTML5
